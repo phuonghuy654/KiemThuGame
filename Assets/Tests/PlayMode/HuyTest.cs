@@ -70,7 +70,7 @@ public class HuyTest
 
     // Test 1: Player starts not unlocked
     [UnityTest]
-    public IEnumerator PlayerUnlocked_DefaultsToFalse()
+    public IEnumerator PlayerLocked()
     {
         yield return null;
         Assert.IsFalse(player.playerUnlocked);
@@ -78,7 +78,7 @@ public class HuyTest
 
     // Test 2: ExtraLife is true when moveSpeed >= speedToSurvive
     [UnityTest]
-    public IEnumerator ExtraLife_IsTrue_WhenMoveSpeedExceedsThreshold()
+    public IEnumerator ExtraLife_IsTrue()
     {
         yield return null;
         SetPrivateField("moveSpeed", 20f);
@@ -89,7 +89,7 @@ public class HuyTest
 
     // Test 3: ExtraLife is false when moveSpeed < speedToSurvive
     [UnityTest]
-    public IEnumerator ExtraLife_IsFalse_WhenMoveSpeedBelowThreshold()
+    public IEnumerator ExtraLife_IsFalse()
     {
         yield return null;
         SetPrivateField("moveSpeed", 10f);
@@ -100,7 +100,7 @@ public class HuyTest
 
     // Test 4: ExtraLife is true at exact threshold
     [UnityTest]
-    public IEnumerator ExtraLife_IsTrue_AtExactThreshold()
+    public IEnumerator ExtraLife_IsTrue_IfHighSpeed()
     {
         yield return null;
         SetPrivateField("moveSpeed", 18f);
