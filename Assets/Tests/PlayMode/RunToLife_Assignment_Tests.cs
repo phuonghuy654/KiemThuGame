@@ -30,12 +30,13 @@ public class RunToLife_Assignment_Tests
         Player player = GameManager.instance.player;
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
 
+        // Đợi nhân vật chạm đất
+        yield return new WaitForSeconds(1f);
+
         player.JumpButton();
-
         yield return new WaitForFixedUpdate();
-
-        Assert.That(rb.linearVelocity.y, Is.GreaterThan(0), "Lỗi: Nhân vật không có lực bay lên!");
-
+        Assert.That(rb.linearVelocity.y, Is.GreaterThan(0),
+            "Lỗi: Nhân vật không có lực bay lên!");
         yield return new WaitForSeconds(0.5f);
     }
 
