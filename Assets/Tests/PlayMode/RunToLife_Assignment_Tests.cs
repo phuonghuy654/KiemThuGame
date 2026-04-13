@@ -20,103 +20,120 @@ public class RunToLife_Assignment_Tests
         yield return null;
     }
 
-    // ========================================================
-    // [LAB 6] - UNIT TEST: ÂM THANH & NHẢY (CÓ HÌNH ẢNH)
-    // ========================================================
-
     [UnityTest]
-    public IEnumerator Lab6_Visual_PlayerJump()
+    [Description("TC_REGISTER_09 - Kiem tra nhan vat nhay khi bam JumpButton")]
+    public IEnumerator TC_REGISTER_09_PlayerJump_AfterJumpButton_RigidbodyHasUpwardVelocity()
     {
         Player player = GameManager.instance.player;
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
 
-        // Đợi nhân vật chạm đất
         yield return new WaitForSeconds(1f);
 
+        float velocityBeforeJump = rb.linearVelocity.y;
         player.JumpButton();
         yield return new WaitForFixedUpdate();
+
+        Assert.That(rb.linearVelocity.y, Is.GreaterThan(velocityBeforeJump),
+            "Nhan vat khong co luc bay len sau khi nhay!");
         Assert.That(rb.linearVelocity.y, Is.GreaterThan(0),
-            "Lỗi: Nhân vật không có lực bay lên!");
+            "Van toc Y phai duong ngay sau khi nhay!");
+
         yield return new WaitForSeconds(0.5f);
     }
 
     [UnityTest]
-    public IEnumerator Lab6_Logic_MuteButton()
+    [Description("TC_REGISTER_41 - Kiem tra Mute toan bo am thanh")]
+    public IEnumerator TC_REGISTER_41_MuteButton_TogglesAudioListenerVolume_BetweenZeroAndOne()
     {
         UI_Main ui = GameObject.FindObjectOfType<UI_Main>();
+        Assert.That(ui, Is.Not.Null, "Khong tim thay UI_Main trong scene!");
 
         ui.MuteButton();
-        Assert.That(AudioListener.volume, Is.EqualTo(0), "Lỗi: Volume không về 0 khi Mute!");
+        Assert.That(AudioListener.volume, Is.EqualTo(0).Within(0.001f),
+            "Volume phai bang 0 sau khi nhan Mute lan dau!");
 
         ui.MuteButton();
-        Assert.That(AudioListener.volume, Is.EqualTo(1), "Lỗi: Volume không quay lại 1 khi Unmute!");
+        Assert.That(AudioListener.volume, Is.EqualTo(1).Within(0.001f),
+            "Volume phai tro ve 1 sau khi nhan Mute lan hai (Unmute)!");
 
         yield return null;
     }
 
-    // ========================================================
-    // [LAB 7] - INTEGRATION: TÍCH HỢP UI & HỆ THỐNG LƯU TRỮ
-    // ========================================================
-
     [UnityTest]
-    public IEnumerator Lab7_Integration_UpdateUI_InGame()
+    [Description("TC_REGISTER_33 - Cap nhat so Coins tren UI trong game")]
+    public IEnumerator TC_REGISTER_33_UpdateUI_WhenCoinsChanged_InGameUIDisplaysCorrectValue()
     {
         UI_InGame ui = GameObject.FindObjectOfType<UI_InGame>(true);
 
-        if (ui != null)
+        if (ui == null)
         {
-            GameManager.instance.coins = 888;
+            Assert.Pass("Khong co UI_InGame trong scene, bo qua test.");
+            yield break;
+        }
 
-            yield return new WaitForSeconds(0.5f);
+        int testCoins = 888;
+        GameManager.instance.coins = testCoins;
 
-            TextMeshProUGUI[] allTexts = ui.GetComponentsInChildren<TextMeshProUGUI>(true);
-            bool isUIUpdated = false;
+        yield return new WaitForSeconds(0.5f);
 
-            foreach (var txt in allTexts)
+        TextMeshProUGUI[] allTexts = ui.GetComponentsInChildren<TextMeshProUGUI>(true);
+        Assert.That(allTexts.Length, Is.GreaterThan(0),
+            "UI_InGame khong co bat ky TextMeshProUGUI nao!");
+
+        bool isUIUpdated = false;
+        foreach (var txt in allTexts)
+        {
+            if (txt.text.Contains(testCoins.ToString()))
             {
-                if (txt.text.Contains("888"))
-                {
-                    isUIUpdated = true;
-                    break;
-                }
+                isUIUpdated = true;
+                break;
             }
+        }
 
-            Assert.That(isUIUpdated, Is.True, "Lỗi: UI InGame không chịu cập nhật hiển thị số tiền!");
-        }
-        else
-        {
-            Assert.Pass();
-        }
+        Assert.That(isUIUpdated, Is.True,
+            $"UI InGame khong hien thi dung so tien ({testCoins}). Kiem tra lai ham cap nhat UI!");
     }
 
     [UnityTest]
-    public IEnumerator Lab7_Integration_SaveGameData()
+    [Description("TC_REGISTER_04 - Luu du lieu game vao PlayerPrefs")]
+    public IEnumerator TC_REGISTER_04_SaveInfo_AfterSettingCoins_PlayerPrefsStoresCorrectValue()
     {
-        int initialCoins = PlayerPrefs.GetInt("Coins", 0);
+        PlayerPrefs.DeleteKey("Coins");
+        PlayerPrefs.Save();
 
-        GameManager.instance.coins = 50;
-
+        int coinsToSave = 50;
+        GameManager.instance.coins = coinsToSave;
         GameManager.instance.SaveInfo();
 
-        int savedCoins = PlayerPrefs.GetInt("Coins");
+        int savedCoins = PlayerPrefs.GetInt("Coins", -1);
 
-        Assert.That(savedCoins, Is.EqualTo(initialCoins + 50), "Lỗi: Hệ thống SaveInfo() không lưu đúng dữ liệu vào máy!");
+        Assert.That(savedCoins, Is.Not.EqualTo(-1),
+            "PlayerPrefs khong co key 'Coins' sau khi SaveInfo()!");
+        Assert.That(savedCoins, Is.EqualTo(coinsToSave),
+            $"SaveInfo() luu sai gia tri! Mong doi {coinsToSave}, thuc te nhan duoc {savedCoins}.");
 
         yield return null;
     }
 
-    // [LAB 8] - Parallel: MÔI TRƯỜNG & KHOẢNG CÁCH
     [UnityTest]
     [Category("PC")]
     [Category("Mobile")]
-    public IEnumerator Lab8_Parallel_DistanceTracking()
+    [Description("TC_REGISTER_25 - Kiem tra he thong quang duong trong thoi gian choi game")]
+    public IEnumerator TC_REGISTER_25_DistanceTracking_AfterTimeElapsed_PlayerMovesForward()
     {
-        float startPositionX = GameManager.instance.player.transform.position.x;
+        Player player = GameManager.instance.player;
+        Assert.That(player, Is.Not.Null, "Khong tim thay Player trong GameManager!");
+
+        float startPositionX = player.transform.position.x;
 
         yield return new WaitForSeconds(2.0f);
 
-        float endPositionX = GameManager.instance.player.transform.position.x;
+        float endPositionX = player.transform.position.x;
+        float distanceTravelled = endPositionX - startPositionX;
 
-        Assert.That(endPositionX, Is.GreaterThan(startPositionX), "Lỗi: Nhân vật đứng yên, không tính được quãng đường!");
+        Assert.That(endPositionX, Is.GreaterThan(startPositionX),
+            $"Nhan vat khong di chuyen! Vi tri ban dau: {startPositionX:F2}, vi tri sau 2 giay: {endPositionX:F2}.");
+        Assert.That(distanceTravelled, Is.GreaterThan(0),
+            $"Quang duong di duoc phai lon hon 0, thuc te: {distanceTravelled:F2}.");
     }
 }
