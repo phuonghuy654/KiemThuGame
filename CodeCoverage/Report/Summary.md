@@ -1,21 +1,21 @@
 ﻿# Summary
 |||
 |:---|:---|
-| Generated on: | 4/9/2026 - 11:06:56 AM |
+| Generated on: | 4/14/2026 - 4:02:41 PM |
 | Parser: | MultiReportParser (2x OpenCoverParser) |
-| Assemblies: | 10 |
-| Classes: | 197 |
-| Files: | 181 |
-| Covered lines: | 609 |
-| Uncovered lines: | 17467 |
-| Coverable lines: | 18076 |
-| Total lines: | 38141 |
-| Line coverage: | 3.3% (609 of 18076) |
+| Assemblies: | 11 |
+| Classes: | 231 |
+| Files: | 214 |
+| Covered lines: | 4579 |
+| Uncovered lines: | 16399 |
+| Coverable lines: | 20978 |
+| Total lines: | 43774 |
+| Line coverage: | 21.8% (4579 of 20978) |
 | Covered branches: | 0 |
 | Total branches: | 0 |
-| Covered methods: | 86 |
-| Total methods: | 2078 |
-| Method coverage: | 4.1% (86 of 2078) |
+| Covered methods: | 533 |
+| Total methods: | 2356 |
+| Method coverage: | 22.6% (533 of 2356) |
 
 |**Name**|**Covered**|**Uncovered**|**Coverable**|**Total**|**Line coverage**|**Covered**|**Total**|**Branch coverage**|**Covered**|**Total**|**Method coverage**|
 |:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -121,35 +121,65 @@
 |Boxophobic.StyledGUI.StyledTexturePreview|0|9|9|20|0%|0|0||0|2|0%|
 |Boxophobic.Utils.SettingsData|0|1|1|13|0%|0|0||0|1|0%|
 |StyledLabelGizmo|0|2|2|118|0%|0|0||0|1|0%|
-|**EditMode**|**0**|**5**|**5**|**24**|**0%**|**0**|**0**|****|**0**|**2**|**0%**|
-|EditMode|0|5|5|24|0%|0|0||0|2|0%|
-|**PlayFab**|**4**|**10277**|**10281**|**37157**|**0%**|**0**|**0**|****|**5**|**1353**|**0.3%**|
+|**EditMode**|**0**|**33**|**33**|**61**|**0%**|**0**|**0**|****|**0**|**3**|**0%**|
+|EditModeExtended|0|33|33|61|0%|0|0||0|3|0%|
+|**GameScripts**|**967**|**186**|**1153**|**2598**|**83.8%**|**0**|**0**|****|**125**|**143**|**87.4%**|
+|AudioManager|32|0|32|60|100%|0|0||7|7|100%|
+|CharacterBox|0|4|4|18|0%|0|0||0|2|0%|
+|Coin|10|0|10|20|100%|0|0||1|1|100%|
+|CoinGenerator|13|0|13|31|100%|0|0||1|1|100%|
+|DigitalRuby.RainMaker.BaseRainScript|134|60|194|362|69%|0|0||5|8|62.5%|
+|DigitalRuby.RainMaker.LoopingAudioSource|27|6|33|362|81.8%|0|0||8|8|100%|
+|DigitalRuby.RainMaker.RainScript2D|126|23|149|222|84.5%|0|0||10|10|100%|
+|Enemy|83|18|101|199|82.1%|0|0||12|13|92.3%|
+|EnemyCreator|10|0|10|24|100%|0|0||1|1|100%|
+|GameManager|43|4|47|104|91.4%|0|0||9|10|90%|
+|LedgeDetection|22|3|25|53|88%|0|0||5|6|83.3%|
+|LevelGenerator|21|0|21|47|100%|0|0||3|3|100%|
+|LimiterGizmos|0|9|9|24|0%|0|0||0|1|0%|
+|MovingTrap|16|3|19|43|84.2%|0|0||2|3|66.6%|
+|ParallaxBackground|14|0|14|37|100%|0|0||2|2|100%|
+|PlatformController|16|0|16|30|100%|0|0||2|2|100%|
+|Player|193|11|204|394|94.6%|0|0||23|24|95.8%|
+|PlayFabManager|22|18|40|105|55%|0|0||5|10|50%|
+|RainController|43|3|46|79|93.4%|0|0||5|5|100%|
+|SceneController|0|3|3|12|0%|0|0||0|1|0%|
+|Trap|10|0|10|24|100%|0|0||3|3|100%|
+|Trigger_DeadZone|4|0|4|12|100%|0|0||1|1|100%|
+|UI_ButtonJump|1|0|1|7|100%|0|0||1|1|100%|
+|UI_ButtonSlide|1|0|1|8|100%|0|0||1|1|100%|
+|UI_EndGame|10|0|10|28|100%|0|0||1|1|100%|
+|UI_InGame|15|0|15|44|100%|0|0||2|2|100%|
+|UI_Main|53|2|55|100|96.3%|0|0||7|8|87.5%|
+|UI_Shop|37|18|55|119|67.2%|0|0||4|4|100%|
+|UI_VolumeSlider|11|1|12|30|91.6%|0|0||4|4|100%|
+|**PlayFab**|**926**|**9355**|**10281**|**37157**|**9%**|**0**|**0**|****|**135**|**1353**|**9.9%**|
 |GzipDownloadHandler|0|33|33|57|0%|0|0||0|5|0%|
 |PlayFab.Events.PlayFabEvents|0|1793|1793|3727|0%|0|0||0|5|0%|
 |PlayFab.Internal.ApiProcessingEventArgs|0|3|3|504|0%|0|0||0|1|0%|
-|PlayFab.Internal.CallRequestContainer|0|11|11|61|0%|0|0||0|1|0%|
+|PlayFab.Internal.CallRequestContainer|11|0|11|61|100%|0|0||1|1|100%|
 |PlayFab.Internal.Log|0|24|24|44|0%|0|0||0|4|0%|
 |PlayFab.Internal.PlayFabDeviceUtil|0|60|60|109|0%|0|0||0|4|0%|
-|PlayFab.Internal.PlayFabHttp|0|233|233|504|0%|0|0||0|26|0%|
-|PlayFab.Internal.PlayFabUnityHttp|0|161|161|280|0%|0|0||0|14|0%|
+|PlayFab.Internal.PlayFabHttp|77|156|233|504|33%|0|0||10|26|38.4%|
+|PlayFab.Internal.PlayFabUnityHttp|50|111|161|280|31%|0|0||7|14|50%|
 |PlayFab.Internal.PlayFabUtil|0|71|71|157|0%|0|0||0|7|0%|
 |PlayFab.Internal.PlayFabWebRequest|0|356|356|544|0%|0|0||0|23|0%|
-|PlayFab.Internal.SingletonMonoBehaviour[T]|0|31|31|58|0%|0|0||0|4|0%|
-|PlayFab.Json.JsonArray|0|5|5|2081|0%|0|0||0|3|0%|
-|PlayFab.Json.JsonObject|0|68|68|2081|0%|0|0||0|22|0%|
+|PlayFab.Internal.SingletonMonoBehaviour[T]|28|3|31|58|90.3%|0|0||4|4|100%|
+|PlayFab.Json.JsonArray|1|4|5|2081|20%|0|0||1|3|33.3%|
+|PlayFab.Json.JsonObject|22|46|68|2081|32.3%|0|0||9|22|40.9%|
 |PlayFab.Json.JsonProperty|0|2|2|2081|0%|0|0||0|1|0%|
-|PlayFab.Json.PlayFabSimpleJson|0|487|487|2081|0%|0|0||0|26|0%|
-|PlayFab.Json.PocoJsonSerializerStrategy|0|234|234|2081|0%|0|0||0|12|0%|
-|PlayFab.Json.ReflectionUtils|0|143|143|2081|0%|0|0||0|31|0%|
-|PlayFab.Json.ReflectionUtilsThreadSafeDictionary[TKey,TValue]|0|64|64|2081|0%|0|0||0|20|0%|
-|PlayFab.Json.SimpleJsonInstance|0|63|63|108|0%|0|0||0|8|0%|
+|PlayFab.Json.PlayFabSimpleJson|260|227|487|2081|53.3%|0|0||22|26|84.6%|
+|PlayFab.Json.PocoJsonSerializerStrategy|153|81|234|2081|65.3%|0|0||11|12|91.6%|
+|PlayFab.Json.ReflectionUtils|84|59|143|2081|58.7%|0|0||20|31|64.5%|
+|PlayFab.Json.ReflectionUtilsThreadSafeDictionary[TKey,TValue]|31|33|64|2081|48.4%|0|0||4|20|20%|
+|PlayFab.Json.SimpleJsonInstance|26|37|63|108|41.2%|0|0||5|8|62.5%|
 |PlayFab.PlayFabAddonAPI|0|187|187|429|0%|0|0||0|33|0%|
 |PlayFab.PlayFabAddonInstanceAPI|0|204|204|387|0%|0|0||0|34|0%|
-|PlayFab.PlayFabApiSettings|0|14|14|102|0%|0|0||0|19|0%|
+|PlayFab.PlayFabApiSettings|7|7|14|102|50%|0|0||5|19|26.3%|
 |PlayFab.PlayFabAuthenticationAPI|0|33|33|104|0%|0|0||0|7|0%|
-|PlayFab.PlayFabAuthenticationContext|0|37|37|87|0%|0|0||0|7|0%|
+|PlayFab.PlayFabAuthenticationContext|3|34|37|87|8.1%|0|0||1|7|14.2%|
 |PlayFab.PlayFabAuthenticationInstanceAPI|0|55|55|121|0%|0|0||0|10|0%|
-|PlayFab.PlayFabClientAPI|0|1050|1050|2429|0%|0|0||0|177|0%|
+|PlayFab.PlayFabClientAPI|7|1043|1050|2429|0.6%|0|0||2|177|1.1%|
 |PlayFab.PlayFabClientInstanceAPI|0|1072|1072|2108|0%|0|0||0|180|0%|
 |PlayFab.PlayFabCloudScriptAPI|0|104|104|244|0%|0|0||0|18|0%|
 |PlayFab.PlayFabCloudScriptInstanceAPI|0|114|114|224|0%|0|0||0|19|0%|
@@ -158,9 +188,9 @@
 |PlayFab.PlayFabDataInstanceAPI|0|66|66|137|0%|0|0||0|11|0%|
 |PlayFab.PlayFabEconomyAPI|0|283|283|688|0%|0|0||0|49|0%|
 |PlayFab.PlayFabEconomyInstanceAPI|0|300|300|614|0%|0|0||0|50|0%|
-|PlayFab.PlayFabError|0|21|21|1003|0%|0|0||0|3|0%|
+|PlayFab.PlayFabError|15|6|21|1003|71.4%|0|0||2|3|66.6%|
 |PlayFab.PlayFabEventsAPI|0|85|85|209|0%|0|0||0|16|0%|
-|PlayFab.PlayFabEventsInstanceAPI|0|102|102|203|0%|0|0||0|17|0%|
+|PlayFab.PlayFabEventsInstanceAPI|7|95|102|203|6.8%|0|0||2|17|11.7%|
 |PlayFab.PlayFabException|0|4|4|1003|0%|0|0||0|1|0%|
 |PlayFab.PlayFabExperimentationAPI|0|85|85|208|0%|0|0||0|16|0%|
 |PlayFab.PlayFabExperimentationInstanceAPI|0|102|102|200|0%|0|0||0|17|0%|
@@ -176,53 +206,58 @@
 |PlayFab.PlayFabProfilesInstanceAPI|0|78|78|158|0%|0|0||0|13|0%|
 |PlayFab.PlayFabProgressionAPI|0|145|145|339|0%|0|0||0|26|0%|
 |PlayFab.PlayFabProgressionInstanceAPI|0|162|162|311|0%|0|0||0|27|0%|
-|PlayFab.PlayFabSettings|3|117|120|250|2.5%|0|0||4|34|11.7%|
-|PlayFab.PlayFabSettingsRedirect|1|16|17|102|5.8%|0|0||1|17|5.8%|
-|PlayFab.PluginContractKeyComparator|0|6|6|23|0%|0|0||0|2|0%|
-|PlayFab.PluginManager|0|43|43|110|0%|0|0||0|8|0%|
+|PlayFab.PlayFabSettings|73|47|120|250|60.8%|0|0||11|34|32.3%|
+|PlayFab.PlayFabSettingsRedirect|6|11|17|102|35.2%|0|0||6|17|35.2%|
+|PlayFab.PluginContractKeyComparator|6|0|6|23|100%|0|0||2|2|100%|
+|PlayFab.PluginManager|31|12|43|110|72%|0|0||6|8|75%|
 |PlayFab.Public.PlayFabLogger|0|6|6|270|0%|0|0||0|3|0%|
 |PlayFab.Public.PlayFabLoggerBase|0|111|111|270|0%|0|0||0|15|0%|
-|PlayFab.Public.ScreenTimeTracker|0|106|106|255|0%|0|0||0|11|0%|
+|PlayFab.Public.ScreenTimeTracker|13|93|106|255|12.2%|0|0||2|11|18.1%|
 |PlayFab.SharedModels.PlayFabBaseModel|0|4|4|44|0%|0|0||0|1|0%|
-|PlayFab.WsaReflectionExtensions|0|12|12|66|0%|0|0||0|4|0%|
-|PlayFabSharedSettings|0|12|12|36|0%|0|0||0|1|0%|
-|**PlayFabEditorExtensions**|**515**|**2309**|**2824**|**16330**|**18.2%**|**0**|**0**|****|**67**|**267**|**25%**|
+|PlayFab.WsaReflectionExtensions|3|9|12|66|25%|0|0||1|4|25%|
+|PlayFabSharedSettings|12|0|12|36|100%|0|0||1|1|100%|
+|**PlayFabEditorExtensions**|**343**|**2481**|**2824**|**16330**|**12.1%**|**0**|**0**|****|**53**|**267**|**19.8%**|
 |PlayFab.PfEditor.EditorCoroutine|20|63|83|145|24%|0|0||3|7|42.8%|
 |PlayFab.PfEditor.EditorModels.PlayFabError|0|12|12|264|0%|0|0||0|2|0%|
 |PlayFab.PfEditor.FixedWidthLabel|0|15|15|149|0%|0|0||0|3|0%|
 |PlayFab.PfEditor.Json.JsonArray|1|4|5|2047|20%|0|0||1|3|33.3%|
 |PlayFab.PfEditor.Json.JsonObject|8|60|68|2047|11.7%|0|0||3|22|13.6%|
-|PlayFab.PfEditor.Json.JsonWrapper|3|15|18|80|16.6%|0|0||1|8|12.5%|
-|PlayFab.PfEditor.Json.PlayFabSimpleJson|119|373|492|2047|24.1%|0|0||12|28|42.8%|
-|PlayFab.PfEditor.Json.PocoJsonSerializerStrategy|48|161|209|2047|22.9%|0|0||1|11|9%|
-|PlayFab.PfEditor.Json.ReflectionUtils|38|103|141|2047|26.9%|0|0||9|31|29%|
-|PlayFab.PfEditor.Json.ReflectionUtilsThreadSafeDictionary[TKey,TValue]|6|58|64|2047|9.3%|0|0||2|20|10%|
+|PlayFab.PfEditor.Json.JsonWrapper|4|14|18|80|22.2%|0|0||2|8|25%|
+|PlayFab.PfEditor.Json.PlayFabSimpleJson|135|357|492|2047|27.4%|0|0||14|28|50%|
+|PlayFab.PfEditor.Json.PocoJsonSerializerStrategy|60|149|209|2047|28.7%|0|0||4|11|36.3%|
+|PlayFab.PfEditor.Json.ReflectionUtils|64|77|141|2047|45.3%|0|0||14|31|45.1%|
+|PlayFab.PfEditor.Json.ReflectionUtilsThreadSafeDictionary[TKey,TValue]|22|42|64|2047|34.3%|0|0||4|20|20%|
 |PlayFab.PfEditor.Json.SimpleJsonInstance|3|12|15|80|20%|0|0||1|5|20%|
-|PlayFab.PfEditor.PlayFabEditor|32|246|278|432|11.5%|0|0||4|24|16.6%|
-|PlayFab.PfEditor.PlayFabEditorDataService|6|56|62|105|9.6%|0|0||4|15|26.6%|
-|PlayFab.PfEditor.PlayFabEditorHeader|19|9|28|52|67.8%|0|0||1|1|100%|
-|PlayFab.PfEditor.PlayFabEditorHelper|4|113|117|229|3.4%|0|0||2|8|25%|
+|PlayFab.PfEditor.PlayFabEditor|4|274|278|432|1.4%|0|0||1|24|4.1%|
+|PlayFab.PfEditor.PlayFabEditorDataService|0|62|62|105|0%|0|0||0|15|0%|
+|PlayFab.PfEditor.PlayFabEditorHeader|0|28|28|52|0%|0|0||0|1|0%|
+|PlayFab.PfEditor.PlayFabEditorHelper|0|117|117|229|0%|0|0||0|8|0%|
 |PlayFab.PfEditor.PlayFabEditorHelpMenu|0|175|175|235|0%|0|0||0|5|0%|
 |PlayFab.PfEditor.PlayFabEditorHttp|17|54|71|148|23.9%|0|0||3|6|50%|
-|PlayFab.PfEditor.PlayFabEditorMenu|37|89|126|174|29.3%|0|0||2|8|25%|
+|PlayFab.PfEditor.PlayFabEditorMenu|0|126|126|174|0%|0|0||0|8|0%|
 |PlayFab.PfEditor.PlayFabEditorPrefsSO|5|20|25|66|20%|0|0||3|8|37.5%|
-|PlayFab.PfEditor.PlayFabEditorSDKTools|108|283|391|544|27.6%|0|0||8|16|50%|
+|PlayFab.PfEditor.PlayFabEditorSDKTools|0|391|391|544|0%|0|0||0|16|0%|
 |PlayFab.PfEditor.PlayFabEditorSettings|0|60|60|116|0%|0|0||0|6|0%|
 |PlayFab.PfEditor.PlayFabEditorUtil|0|46|46|118|0%|0|0||0|6|0%|
 |PlayFab.PfEditor.PlayFabGuiFieldHelper|0|23|23|149|0%|0|0||0|2|0%|
-|PlayFab.PfEditor.ProgressBar|19|99|118|155|16.1%|0|0||1|4|25%|
+|PlayFab.PfEditor.ProgressBar|0|118|118|155|0%|0|0||0|4|0%|
 |PlayFab.PfEditor.SubMenuComponent|0|144|144|211|0%|0|0||0|8|0%|
 |PlayFab.PfEditor.UnityGuiToggler|0|8|8|149|0%|0|0||0|2|0%|
-|PlayFab.PfEditor.UnityHorizontal|11|0|11|149|100%|0|0||3|3|100%|
-|PlayFab.PfEditor.UnityVertical|11|0|11|149|100%|0|0||3|3|100%|
+|PlayFab.PfEditor.UnityHorizontal|0|11|11|149|0%|0|0||0|3|0%|
+|PlayFab.PfEditor.UnityVertical|0|11|11|149|0%|0|0||0|3|0%|
 |PlayFab.PfEditor.ZeroIndent|0|8|8|149|0%|0|0||0|2|0%|
 |**PlayFabSDKEditor**|**0**|**22**|**22**|**59**|**0%**|**0**|**0**|****|**0**|**6**|**0%**|
 |MakeScriptableObject|0|7|7|21|0%|0|0||0|1|0%|
 |PlayFab.PfEditor.PlayFabHelp|0|15|15|38|0%|0|0||0|5|0%|
-|**PlayMode**|**57**|**606**|**663**|**1178**|**8.5%**|**0**|**0**|****|**6**|**81**|**7.4%**|
-|HoangTest|0|125|125|214|0%|0|0||0|15|0%|
-|HungTest|0|129|129|220|0%|0|0||0|15|0%|
-|HuyTest|0|93|93|164|0%|0|0||0|15|0%|
-|PhatTest|0|143|143|234|0%|0|0||0|15|0%|
-|RunToLife_Assignment_Tests|57|3|60|148|95%|0|0||6|6|100%|
-|VuTest|0|113|113|198|0%|0|0||0|15|0%|
+|**PlayMode**|**2310**|**74**|**2384**|**4538**|**96.8%**|**0**|**0**|****|**212**|**215**|**98.6%**|
+|AdditionalAutoTests|415|31|446|854|93%|0|0||35|37|94.5%|
+|CoverageBoostTests|827|20|847|1580|97.6%|0|0||67|67|100%|
+|HoangTest|125|0|125|214|100%|0|0||15|15|100%|
+|HungTest|129|0|129|220|100%|0|0||15|15|100%|
+|HuyTest|88|5|93|164|94.6%|0|0||14|15|93.3%|
+|NewAutoTests_PlayMode|244|5|249|581|97.9%|0|0||20|20|100%|
+|PhatTest|143|0|143|234|100%|0|0||15|15|100%|
+|PlayModeDeepLogic|59|2|61|150|96.7%|0|0||3|3|100%|
+|PlayModeExtended|99|8|107|204|92.5%|0|0||7|7|100%|
+|RunToLife_Assignment_Tests|68|3|71|139|95.7%|0|0||6|6|100%|
+|VuTest|113|0|113|198|100%|0|0||15|15|100%|
