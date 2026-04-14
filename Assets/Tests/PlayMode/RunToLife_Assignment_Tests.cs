@@ -21,8 +21,8 @@ public class RunToLife_Assignment_Tests
     }
 
     [UnityTest]
-    [Description("TC_REGISTER_09 - Kiem tra nhan vat nhay khi bam JumpButton")]
-    public IEnumerator TC_REGISTER_09_PlayerJump_AfterJumpButton_RigidbodyHasUpwardVelocity()
+    [Description("TC_ANIMATION_03 - Kiem tra nhan vat nhay khi bam JumpButton")]
+    public IEnumerator TC_ANIMATION_03_PlayerJump_AfterJumpButton_RigidbodyHasUpwardVelocity()
     {
         Player player = GameManager.instance.player;
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
@@ -42,8 +42,8 @@ public class RunToLife_Assignment_Tests
     }
 
     [UnityTest]
-    [Description("TC_REGISTER_41 - Kiem tra Mute toan bo am thanh")]
-    public IEnumerator TC_REGISTER_41_MuteButton_TogglesAudioListenerVolume_BetweenZeroAndOne()
+    [Description("TC_SOUND_3 - Kiem tra Mute toan bo am thanh")]
+    public IEnumerator TC_SOUND_3_MuteButton_TogglesAudioListenerVolume_BetweenZeroAndOne()
     {
         UI_Main ui = GameObject.FindObjectOfType<UI_Main>();
         Assert.That(ui, Is.Not.Null, "Khong tim thay UI_Main trong scene!");
@@ -60,8 +60,8 @@ public class RunToLife_Assignment_Tests
     }
 
     [UnityTest]
-    [Description("TC_REGISTER_33 - Cap nhat so Coins tren UI trong game")]
-    public IEnumerator TC_REGISTER_33_UpdateUI_WhenCoinsChanged_InGameUIDisplaysCorrectValue()
+    [Description("TC_UI_7 - Cap nhat so Coins tren UI trong game")]
+    public IEnumerator TC_UI_7_UpdateUI_WhenCoinsChanged_InGameUIDisplaysCorrectValue()
     {
         UI_InGame ui = GameObject.FindObjectOfType<UI_InGame>(true);
 
@@ -95,8 +95,8 @@ public class RunToLife_Assignment_Tests
     }
 
     [UnityTest]
-    [Description("TC_REGISTER_04 - Luu du lieu game vao PlayerPrefs")]
-    public IEnumerator TC_REGISTER_04_SaveInfo_AfterSettingCoins_PlayerPrefsStoresCorrectValue()
+    [Description("TC_LOGIN_01 - Luu du lieu game vao PlayerPrefs")]
+    public IEnumerator TC_LOGIN_01_SaveInfo_AfterSettingCoins_PlayerPrefsStoresCorrectValue()
     {
         PlayerPrefs.DeleteKey("Coins");
         PlayerPrefs.Save();
@@ -118,8 +118,8 @@ public class RunToLife_Assignment_Tests
     [UnityTest]
     [Category("PC")]
     [Category("Mobile")]
-    [Description("TC_REGISTER_25 - Kiem tra he thong quang duong trong thoi gian choi game")]
-    public IEnumerator TC_REGISTER_25_DistanceTracking_AfterTimeElapsed_PlayerMovesForward()
+    [Description("TC_UI_2 - Kiem tra he thong quang duong trong thoi gian choi game")]
+    public IEnumerator TC_UI_2_DistanceTracking_AfterTimeElapsed_PlayerMovesForward()
     {
         Player player = GameManager.instance.player;
         Assert.That(player, Is.Not.Null, "Khong tim thay Player trong GameManager!");

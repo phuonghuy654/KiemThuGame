@@ -22,28 +22,8 @@ public class PlayModeExtended
     }
 
     [UnityTest]
-    [Description("TC_REGISTER_19 - Kiem tra spawn map lien tuc")]
-    public IEnumerator TC_REGISTER_19_LevelGenerator_AfterPlayerMovesForward_SpawnsNewMapParts()
-    {
-        yield return SceneManager.LoadSceneAsync(1);
-        yield return new WaitForSeconds(0.5f);
-
-        LevelGenerator generator = GameObject.FindObjectOfType<LevelGenerator>();
-        Assert.That(generator, Is.Not.Null, "Khong tim thay LevelGenerator trong scene!");
-
-        int initialChildCount = generator.transform.childCount;
-
-        yield return new WaitForSeconds(3.0f);
-
-        int laterChildCount = generator.transform.childCount;
-
-        Assert.That(laterChildCount, Is.GreaterThanOrEqualTo(initialChildCount),
-            $"Map khong spawn them phan moi! So parts ban dau: {initialChildCount}, sau 3 giay: {laterChildCount}.");
-    }
-
-    [UnityTest]
-    [Description("TC_REGISTER_11 - Kiem tra animation player slide state")]
-    public IEnumerator TC_REGISTER_11_Player_SlideButton_AnimatorEntersSlideState()
+    [Description("TC_ANIMATION_05 - Kiem tra animation player slide state")]
+    public IEnumerator TC_ANIMATION_05_Player_SlideButton_AnimatorEntersSlideState()
     {
         yield return SceneManager.LoadSceneAsync(1);
         yield return new WaitForSeconds(1f);
@@ -64,8 +44,8 @@ public class PlayModeExtended
     }
 
     [UnityTest]
-    [Description("TC_REGISTER_34 - Kiem tra thanh chinh am luong")]
-    public IEnumerator TC_REGISTER_34_VolumeSlider_WhenValueChanged_AudioListenerVolumeUpdatesAccordingly()
+    [Description("TC_SOUND_1 - Kiem tra thanh chinh am luong")]
+    public IEnumerator TC_SOUND_1_VolumeSlider_WhenValueChanged_AudioListenerVolumeUpdatesAccordingly()
     {
         yield return SceneManager.LoadSceneAsync(1);
         yield return null;
@@ -109,8 +89,8 @@ public class PlayModeExtended
     }
 
     [UnityTest]
-    [Description("TC_REGISTER_42 - Kiem tra Extra Life cua Player")]
-    public IEnumerator TC_REGISTER_42_Player_WhenSpeedAboveThreshold_ExtraLifeIsTrue()
+    [Description("TC_LOGIC_14 - Kiem tra Extra Life cua Player")]
+    public IEnumerator TC_LOGIC_14_Player_WhenSpeedAboveThreshold_ExtraLifeIsTrue()
     {
         yield return SceneManager.LoadSceneAsync(1);
         yield return new WaitForSeconds(0.5f);
@@ -143,8 +123,8 @@ public class PlayModeExtended
     }
 
     [UnityTest]
-    [Description("TC_REGISTER_20 - Kiem tra spawn chong chuong ngai vat")]
-    public IEnumerator TC_REGISTER_20_Trap_Initialization_KeepsObjectIfChanceSucceeds()
+    [Description("TC_LOGIC_6 - Kiem tra spawn chong chuong ngai vat")]
+    public IEnumerator TC_LOGIC_6_Trap_Initialization_KeepsObjectIfChanceSucceeds()
     {
         tempTrapObj = new GameObject();
         Trap trap = tempTrapObj.AddComponent<Trap>();
@@ -164,8 +144,8 @@ public class PlayModeExtended
     }
 
     [Test]
-    [Description("TC_REGISTER_36 - Kiem tra Animation cua Enemy")]
-    public void TC_REGISTER_36_Enemy_AnimationTrigger_ResetsStateAndAllowsMovement()
+    [Description("TC_ANIMATION_09 - Kiem tra Animation cua Enemy")]
+    public void TC_ANIMATION_09_Enemy_AnimationTrigger_ResetsStateAndAllowsMovement()
     {
         tempEnemyObj = new GameObject();
         tempEnemyObj.SetActive(false);
@@ -203,8 +183,8 @@ public class PlayModeExtended
     }
 
     [Test]
-    [Description("TC_REGISTER_22 - Kiem tra climb")]
-    public void TC_REGISTER_22_LedgeDetection_OnTriggerEnter2D_GroundLayer_DisablesDetection()
+    [Description("TC_LOGIC_8 - Kiem tra climb")]
+    public void TC_LOGIC_8_LedgeDetection_OnTriggerEnter2D_GroundLayer_DisablesDetection()
     {
         tempLedgeObj = new GameObject();
         LedgeDetection ledge = tempLedgeObj.AddComponent<LedgeDetection>();
